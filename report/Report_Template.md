@@ -3,7 +3,7 @@
 
 **Author:** _Your Name_  
 **Date:** _YYYY-MM-DD_  
-**Repo URL:** _https://github.com//student-feedback-portal_  
+**Repo URL:** _https://github.com/ANGESHKUMAR123/student-feedback-portal_  
 **Deployed URL (if any):** _https://..._
 
 ---
