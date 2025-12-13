@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_required, current_user
 
 from models import db, Feedback
@@ -17,6 +16,7 @@ login_manager.init_app(app)
 
 app.register_blueprint(auth)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     from models import User
@@ -32,7 +32,12 @@ def index():
         comments = request.form.get("comments")
 
         if course and rating:
-            feedback = Feedback(course=course, rating=int(rating), comments=comments, user_id=current_user.id)
+            feedback = Feedback(
+                course=course,
+                rating=int(rating),
+                comments=comments,
+                user_id=current_user.id,
+            )
             db.session.add(feedback)
             db.session.commit()
             return redirect(url_for("thanks"))
